@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+       <h1> Всем привет,меня зовут Егор.Я представляю свой сайт!!!</h1>
+    
+
+    <div id="container">
+        <div class="buton">
+            <button onclick="kg()">Килограммы</button>
+            <button onclick="km()">Граммы</button>
+            <button onclick="dolru()"> Деньги</button>
+
+
+        </div>
+    <div id="zero" hidden style="background-color: rgba(212, 212, 212, 0.596);">
+    <div class="zadan">
+        <h2>Килограммы</h2>
+        <input type="number" oninput="kil()"  id="grup" min="0">
+        <h2>Граммы</h2>
+        <input type="number" oninput="gram()" id="inp" min="0">
+    </div>
+</div>
+
+    <div id="one" hidden style="background-color: rgba(212, 212, 212, 0.596);">    
+    <div class="zadan">
+        <h2>Километры</h2>
+        <input type="number" oninput="kilom()"  id="rock" min="0">
+        <h2>Метры</h2>
+        <input type="number" oninput="metr()"  id="rastoan" min="0">
+    </div>
+    </div>
+
+    <div id="too" hidden style="background-color: rgba(212, 212, 212, 0.596);">
+    <div class="zadan">
+        <h2>Доллары</h2>
+        <input type="number" oninput="rub()"  id="rusmoney" min="0">
+        <h2>Рубли</h2>
+        <input type="number" oninput="dollar()"  id="ammoney" min="0">
+    </div>
+    </div>  
+    </div>
+
+    
+    <script>
+
+        let showOne=false;
+        function kg(){
+            showOne = !showOne;
+            if(showOne){
+                document.querySelector('#zero').hidden = false;
+            }
+            else{
+                document.querySelector('#zero').hidden = true;
+            }
+        }
+        function km(){
+            showOne = !showOne;
+            if(showOne){
+                document.querySelector('#one').hidden = false;
+            }
+            else{
+                document.querySelector('#one').hidden = true;
+            }
+        }
+        function dolru(){
+            showOne = !showOne;
+            if(showOne){
+                document.querySelector('#too').hidden = false;
+            }
+            else{
+                document.querySelector('#too').hidden = true;
+            }
+        }
+
+        function gram(){
+           kilo=inp.value;
+           m=kilo/1000
+           document.querySelector('#grup').value=m;
+        }
+        function kil(){
+            m=grup.value;
+            kilo=m*1000;
+            document.querySelector('#inp').value=kilo;
+        }
+        function metr(){
+            kilometr=rastoan.value;
+            meter=kilometr/1000
+            document.querySelector('#rock').value=meter;
+        }
+        function kilom(){
+           meter=rock.value
+            kilometr=meter*1000
+            document.querySelector('#rastoan').value=kilometr;
+        }
+        function rub(){
+            dol=rusmoney.value;
+            rybl=dol*70;
+            document.querySelector('#ammoney').value=rybl;
+        }
+        function dollar(){
+            rybl=ammoney.value;
+            dol=rybl/70;
+            document.querySelector('#rusmoney').value=dol;
+        }
+    </script>
+   
+</body>
+</html>
